@@ -1,0 +1,6 @@
+{
+  "name": "alm-api-rest-client-nodejs",
+  "version": "1.0.0",
+  "description": "A Node.js project",
+  "main": "src/get-alm-data.js"
+}
