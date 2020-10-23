@@ -1,8 +1,15 @@
 
 const XmlParser = require("xml2json");
-var http = require('http'),
-    fs = require('fs'),
-    config = JSON.parse(fs.readFileSync('config.json'));//this refers to a file where I have all my config like host, userName, password Etc
+var http = require('http')
+var fs = require('fs')
+//var config = JSON.parse(fs.readFileSync('./config.json')); //this refers to a file where I have all my config like host, userName, password Etc
+
+let configdata = fs.readFileSync('./config.json', 'utf8');
+let config = JSON.parse(configdata);
+console.log(config);
+
+//let configData = require('./config.json');
+//var config = JSON.parse(configData)
 
 // set the correct options for the call.
 var options = {
