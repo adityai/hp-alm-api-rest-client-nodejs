@@ -1,6 +1,8 @@
 # Custom - Customer-01: Exemplo Host, Username e Password
 config.json
 
+# Lock - NodeJs
+package-lock.json
 
 # Logs
 logs
