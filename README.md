@@ -14,4 +14,6 @@ referencias:
 > https://community.microfocus.com/t5/ALM-QC-User-Discussions/Cannot-access-any-entity-in-ALM-12-2-via-REST/m-p/944762
 
 requirements:
+> npm install --global windows-build-tools
 > npm install xml2json
+
