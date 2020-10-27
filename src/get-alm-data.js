@@ -1,11 +1,7 @@
 
 const XmlParser = require("xml2json");
 var http = require('http')
-var fs = require('fs')
-//var config = JSON.parse(fs.readFileSync('./config.json')); //this refers to a file where I have all my config like host, userName, password Etc
-
-let configdata = fs.readFileSync('./config.json', 'utf8');
-let config = JSON.parse(configdata);
+let config = require('../config');
 console.log(config);
 
 //let configData = require('./config.json');
@@ -43,7 +39,7 @@ ALMConnect(options, 'header','', function(status, data){
                         
             // 5. Lista de Defeitos:
             //Get(cookies, "/qcbin/rest/domains/ARQUITETURA_TESTE_INTEGRACAO/projects/CTAS_CONTAS/defects")
-        } else{
+        }else{
             console.log('ERROR:  Unable to login, check your username/password/serverURL.');
         }
     } else {
