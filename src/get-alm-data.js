@@ -1,11 +1,11 @@
 
 const XmlParser = require("xml2json");
-//morgan - utiizado para tratamento de erros
-const morgan = require("morgan");
 var http = require('http')
 let config = require('../config');
 console.log(config);
 
+//let configData = require('./config.json');
+//var config = JSON.parse(configData)
 
 // set the correct options for the call.
 var options = {
@@ -25,7 +25,7 @@ ALMConnect(options, 'header','', function(status, data){
             // is-authenticated
             // 1. Lista de todos os domínios e projeto:
             //var jsonDomains = Get(cookies, "/qcbin/api/domains")
-            //Get(cookies, "/qcbin/api/domains?include-projects-info=y")
+            Get(cookies, "/qcbin/api/domains?include-projects-info=y")
             //Get(cookies, "/qcbin/api/domains")
 
             // 2. Pesquisa de versão atrelada a uma sequência especifica:
@@ -116,17 +116,7 @@ function Get(LWSSO_Cookie, path){
             // console.log(XMLoutput);  
             console.log('JSONoutput:');   
             console.log("");
-
-            // for(var i = 0; i < JSONoutput.Domains.Domain.length; i++){
-            //     for(var j = 0; j < JSONoutput.Domains.Domain[i].Projects.Project.length; j++){
-            //         var nome =  JSON.stringify(JSONoutput.Domains.Domain[i].Projects.Project[j])
-            //         console.log(nome); 
-            //     }
-            // }
-
-            return JSONoutput;
-
-            //console.log(JSON.stringify(JSONoutput));     
+            console.log(JSON.stringify(JSONoutput));     
              
         });
 
