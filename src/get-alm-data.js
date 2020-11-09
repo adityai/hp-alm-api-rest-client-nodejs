@@ -39,6 +39,36 @@ ALMConnect(options, 'header','', function(status, data){
                         
             // 5. Lista de Defeitos:
             //Get(cookies, "/qcbin/rest/domains/ARQUITETURA_TESTE_INTEGRACAO/projects/CTAS_CONTAS/defects")
+            
+            //INPUTS 
+
+            var projectName = "CPOS_MANUTENCAO_CADASTRO_POSIT";
+            var rotina = "CPOS";
+            var nSequencia = "2019-0507722-5-004";
+            var dominio = "ARQUITETURA_TESTE_INTEGRACAO";
+
+            var URI_ALM_Releases = "/qcbin/rest/domains/" + dominio +"/projects/" + projectName + "/releases?query={user-template-01[" + nSequencia + "]}";
+            var URI_ALM_Releases_Cycles = "/qcbin/rest/domains/" + dominio + "/projects/" + projectName + "/release-cycles?query={parent-id[1002]}";
+            var URI_ALM_Test_Instances = "/qcbin/rest/domains/" + dominio + "/projects/" + projectName + "/test-instances?/query={assign-rcyc[1002]}";
+
+            Get(cookies, URI_ALM_Releases, function(jsonData){
+                var releases = jsonData
+                
+                    // Get(cookies, URI_ALM_Releases_Cycles,function(jsonData) {
+                    //     var release_cycles = jsonData
+
+                    //         Get(cookies, URI_ALM_Test_Instances, function(jsonData){
+                    //             var test_instances = jsonData
+                    //         })
+                    // })
+
+                    console.log(releases);
+                    //console.log(releases_cycles);
+                    //console.log(test_instances);
+            })
+
+            //console.log(response);
+
         }else{
             console.log('ERROR:  Unable to login, check your username/password/serverURL.');
         }
